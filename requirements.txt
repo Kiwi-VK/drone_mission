@@ -1,0 +1,7 @@
+﻿pymavlink>=2.4.41,<3
+numpy>=1.24,<3
+Pillow>=10,<13
+pyserial>=3.5,<4
+# Optional depth backends on Raspberry Pi:
+# depthai>=2.25
+# pyrealsense2>=2.55

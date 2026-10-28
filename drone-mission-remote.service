@@ -1,0 +1,20 @@
+﻿[Unit]
+Description=Remote-start drone mission controller
+After=network-online.target
+Wants=network-online.target
+ConditionPathExists=/etc/drone-mission/enable-real-flight
+
+[Service]
+Type=simple
+User=kiwivk
+WorkingDirectory=/home/kiwivk/drone_mission_project_rpi5_ready
+EnvironmentFile=/etc/drone-mission/mission.env
+ExecStart=/home/kiwivk/drone_mission_project_rpi5_ready/.venv/bin/python /home/kiwivk/drone_mission_project_rpi5_ready/mission.py --execute --confirm-real
+Restart=no
+KillSignal=SIGTERM
+TimeoutStopSec=15
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,20 @@
+[Unit]
+Description=Drone mission controller (manual enable only)
+After=network-online.target
+Wants=network-online.target
+ConditionPathExists=/etc/drone-mission/enable-real-flight
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/opt/drone_mission_project
+EnvironmentFile=-/etc/drone-mission/mission.env
+ExecStart=/opt/drone_mission_project/.venv/bin/python /opt/drone_mission_project/mission.py --execute --confirm-real
+Restart=no
+KillSignal=SIGTERM
+TimeoutStopSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

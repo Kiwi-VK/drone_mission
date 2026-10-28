@@ -1,0 +1,19 @@
+﻿[Unit]
+Description=Drone mission controller on Ubuntu Raspberry Pi 5
+After=network-online.target
+Wants=network-online.target
+ConditionPathExists=/etc/drone-mission/enable-real-flight
+
+[Service]
+Type=oneshot
+User=kiwivk
+WorkingDirectory=/home/kiwivk/drone_mission_project_rpi5_ready
+Environment=FC_PORT=/dev/serial0
+Environment=FC_BAUD=921600
+ExecStart=/home/kiwivk/drone_mission_project_rpi5_ready/.venv/bin/python /home/kiwivk/drone_mission_project_rpi5_ready/mission.py --execute --confirm-real
+StandardOutput=journal
+StandardError=journal
+TimeoutStartSec=0
+
+[Install]
+WantedBy=multi-user.target

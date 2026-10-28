@@ -1,0 +1,101 @@
+{
+  "schema_version": 2,
+  "drop_sequence": [
+    "black",
+    "white",
+    "red",
+    "yellow"
+  ],
+  "drop_points": [
+    {
+      "id": 1,
+      "north_m": null,
+      "east_m": null
+    },
+    {
+      "id": 2,
+      "north_m": null,
+      "east_m": null
+    },
+    {
+      "id": 3,
+      "north_m": null,
+      "east_m": null
+    },
+    {
+      "id": 4,
+      "north_m": null,
+      "east_m": null
+    }
+  ],
+  "landing_point": {
+    "north_m": null,
+    "east_m": null
+  },
+  "local_origin_north_m": null,
+  "local_origin_east_m": null,
+  "local_origin_down_m": null,
+  "field": {
+    "north_min": null,
+    "north_max": null,
+    "east_min": null,
+    "east_max": null,
+    "end_zone": null
+  },
+  "fixed_obstacles": {
+    "1": {
+      "north_m": null,
+      "east_m": null
+    },
+    "2": {
+      "north_m": null,
+      "east_m": null
+    }
+  },
+  "camera_to_body": null,
+  "camera_calibration": {
+    "fx": null,
+    "fy": null,
+    "undistorted": false
+  },
+  "payload_mechanism": "sequential_servo",
+  "package_slots": [
+    {
+      "color": "black",
+      "channel": 5,
+      "open_pwm": 1800,
+      "close_pwm": 1100
+    },
+    {
+      "color": "white",
+      "channel": 5,
+      "open_pwm": 1800,
+      "close_pwm": 1100
+    },
+    {
+      "color": "red",
+      "channel": 5,
+      "open_pwm": 1800,
+      "close_pwm": 1100
+    },
+    {
+      "color": "yellow",
+      "channel": 5,
+      "open_pwm": 1800,
+      "close_pwm": 1100
+    }
+  ],
+  "commissioning": {
+    "firmware_target_verified": false,
+    "uart_mapping_verified": false,
+    "servo_mapping_verified": false,
+    "indoor_position_verified": false,
+    "camera_capture_verified": false,
+    "camera_axes_verified": false,
+    "range_grid_verified": false,
+    "payload_feedback_verified": false,
+    "loaded_colors_verified": false,
+    "fc_failsafes_verified": false,
+    "field_survey_verified": false
+  }
+}
